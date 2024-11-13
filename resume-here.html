@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume-Here</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f4f8;
+        }
+        #container {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            margin-top: 12vh;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            resize: vertical;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #resumePreview {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #resumePreview h1 {
+            color: #007bff;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+        #resumePreview h3 {
+            color: #555;
+            margin-bottom: 10px;
+            font-weight: normal;
+            font-style: italic;
+        }
+        #resumePreview p {
+            color: #333;
+            line-height: 1.6;
+        }
+        #resumePreview h2 {
+            color: #333;
+            margin-top: 20px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            font-size: 1.4em;
+        }
+        #resumePreview span {
+            font-weight: normal;
+            color: #555;
+        }
+        nav{
+            margin-top: -90vh;
+            margin-left: -25vw;
+            font: bolder;
+            font-size: x-large;
+            color: #007bff;
+            cursor: pointer;
+        }
+        nav a{
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <nav><a href="#"><h1>Resume-Here</h1></a></nav>
+    </div>
+
+<div id="container">
+    <h2>Create your own resume here</h2>
+    <label for="nameInp">Name:</label>
+    <input type="text" id="nameInp">
+
+    <label for="statusInp">Status:</label>
+    <input type="text" id="statusInp">
+
+    <label for="emInp">Email:</label>
+    <input type="email" id="emInp">
+
+    <label for="locInp">Location:</label>
+    <input type="text" id="locInp">
+
+    <label for="numInp">Phone Number:</label>
+    <input type="tel" id="numInp">
+
+    <label for="summInp">Summary:</label>
+    <textarea id="summInp"></textarea>
+
+    <label for="expInp">Experience:</label>
+    <textarea id="expInp"></textarea>
+
+    <label for="eduInp">Education:</label>
+    <textarea id="eduInp"></textarea>
+
+    <label for="skInp">Skills:</label>
+    <textarea id="skInp"></textarea>
+
+    <label for="courseInp">Courses:</label>
+    <textarea id="courseInp"></textarea>
+
+    <label for="hobbInp">Hobbies:</label>
+    <textarea id="hobbInp"></textarea>
+
+    <button id="btn">Generate Resume</button>
+</div>
+
+<div id="resumePreview">
+    <h1 id="previewName"></h1>
+    <h3 id="previewStatus"></h3>
+    <p><strong>Email:</strong> <span id="previewEmail"></span></p>
+    <p><strong>Location:</strong> <span id="previewLocation"></span></p>
+    <p><strong>Phone Number:</strong> <span id="previewNumber"></span></p>
+    <h2>Summary</h2>
+    <p id="previewSummary"></p>
+    <h2>Experience</h2>
+    <p id="previewExperience"></p>
+    <h2>Education</h2>
+    <p id="previewEducation"></p>
+    <h2>Skills</h2>
+    <p id="previewSkills"></p>
+    <h2>Courses</h2>
+    <p id="previewCourses"></p>
+    <h2>Hobbies</h2>
+    <p id="previewHobbies"></p>
+</div>
+
+<script>
+document.getElementById('btn').addEventListener('click', function() {
+    const name = document.getElementById('nameInp').value;
+    const status = document.getElementById('statusInp').value;
+    const email = document.getElementById('emInp').value;
+    const location = document.getElementById('locInp').value;
+    const number = document.getElementById('numInp').value;
+    const summary = document.getElementById('summInp').value;
+    const experience = document.getElementById('expInp').value;
+    const education = document.getElementById('eduInp').value;
+    const skills = document.getElementById('skInp').value;
+    const courses = document.getElementById('courseInp').value;
+    const hobbies = document.getElementById('hobbInp').value;
+
+    document.getElementById('resumePreview').style.display = 'block';
+
+    document.getElementById('previewName').textContent = name;
+    document.getElementById('previewStatus').textContent = status;
+    document.getElementById('previewEmail').textContent = email;
+    document.getElementById('previewLocation').textContent = location;
+    document.getElementById('previewNumber').textContent = number;
+    document.getElementById('previewSummary').textContent = summary;
+    document.getElementById('previewExperience').textContent = experience;
+    document.getElementById('previewEducation').textContent = education;
+    document.getElementById('previewSkills').textContent = skills;
+    document.getElementById('previewCourses').textContent = courses;
+    document.getElementById('previewHobbies').textContent = hobbies;
+});
+</script>
+
+</body>
+</html>
